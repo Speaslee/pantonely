@@ -1,5 +1,6 @@
 Heroku link: http://pantonely.herokuapp.com
-
+==README
 
 This is a music visualizer. Users will be able to sign in and upload their songs.
-Songs will be run through a visualizer and a quicktime movie will be made.
+Songs will be run through a visualizer located at http://github.com/Speaslee/finalproject and a quicktime movie will be made.
+The visualizer utilizes the Minim library for jruby.processing to create the quicktime movies from the songs uploaded by the users

@@ -1,13 +1,17 @@
 h1 songs
 
 ul
-  -@songs.each do |a|
-    li #{a.name} by #{a.artist}
+  -if @songs
+
+    -@songs.each do |a|
+      li #{a.name} by #{a.artist}
+  -else
+    p No songs loaded yet!
 p
 br
 p
 
-=form_for song, method: :patch, url:"songs/show" do |f|
+=form_for Song.new, method: :patch, url:"/songs/show" do |f|
   h4 Song file:
   =f.file_field :songfile
   h4 Artist:
