@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :username
 
  def self.from_omniauth(access_token)
      data = access_token.info
