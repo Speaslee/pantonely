@@ -30,12 +30,30 @@ html lang="en"
           a.navbar-brand href="#"Pantonely
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-
+              li= link_to "Link 1", "/path1"
+              li= link_to "Link 2", "/path2"
+              li= link_to "Link 3", "/path3"
             ul.nav.navbar-nav.pull-right
-              - if current_user
-                li= current_user.username
-                li= link_to "Sign out", destroy_user_session_path, method: :delete
+            - if current_user
+              li= link_to current_user.name, "/users/profile/#{current_user.id}"
+              li= link_to "Sign out", destroy_user_session_path, method: :delete
+              -else
+              li= link_to "Sign in", new_user_session_path
+              li= link_to "Sign up", "/users/sign_up"
 
-              - else
-                li= link_to "Sign in", new_user_session_path
-                li= link_to "Sign up", "/users/sign_up"
+    .container
+      .row
+        .col-lg-9
+          = bootstrap_flash
+          = yield
+        /.col-lg-3
+          .well.sidebar-nav
+            h3 Sidebar
+            ul.nav.nav-list
+              li.nav-header Sidebar
+              li= link_to "Link 1", "/path1"
+              li= link_to "Link 2", "/path2"
+              li= link_to "Link 3", "/path3"
+
+      footer
+        p &copy; Company 2015
