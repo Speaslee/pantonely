@@ -3,5 +3,6 @@ mount_uploader :songfile, DjUploader
 acts_as_taggable
 #process_in_background :songfile
 
+belongs_to :user
 
 end

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email, :username
 
+  has_many :songs
  def self.from_omniauth(access_token)
      data = access_token.info
      user = User.where(:email => data["email"]).first

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202194631) do
+ActiveRecord::Schema.define(version: 20151203203744) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151202194631) do
     t.string   "songfile"
     t.string   "color"
     t.string   "movie"
+    t.integer  "user_id"
   end
 
   create_table "taggings", force: :cascade do |t|
