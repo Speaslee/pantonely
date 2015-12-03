@@ -4,22 +4,25 @@ class SongsController<ApplicationController
   end
 
   def show
+
     @songs = Song.all
   end
 
   def load
+    if current_user
     Song.create(
     name: params[:song][:name],
     artist: params[:song][:artist],
     album: params[:song][:album],
-    songfile: params[:song][:songfile]
+    songfile: params[:song][:songfile],
     user_id: params[:song][:user_id]
     )
     c = params[:song][:songfile].original_filename
 
     MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/uploads/song/songfile/#{Song.last.id}/#{c.(" ","_")}",c.(" ","_"))
     redirect_to :back, notice: "Song loaded"
-
+  else
+    redirect_to new_user_session_path notice: "Please login"
   end
 
   def tagged
