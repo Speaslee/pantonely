@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ #playlist {
+     display:table;
+ }
+ #playlist li{
+     cursor:pointer;
+     padding:8px;
+ }

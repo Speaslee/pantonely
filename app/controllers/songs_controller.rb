@@ -14,13 +14,12 @@ class SongsController<ApplicationController
     name: params[:song][:name],
     artist: params[:song][:artist],
     album: params[:song][:album],
-    songfile: params[:song][:songfile],
+    songfile: params[:song][:songfile].original_filename,
     user_id: params[:song][:user_id]
     )
-    c = params[:song][:songfile].original_filename
-
-    MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/uploads/song/songfile/#{Song.last.id}/#{c.(" ","_")}",c.(" ","_"))
     redirect_to :back, notice: "Song loaded"
+    MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/uploads/song/songfile/#{Song.last.id}/#{Song.last.songfile.tr(" ", "_")}", Song.last.songfile.tr(" ", "_"))
+
   else
     redirect_to new_user_session_path notice: "Please login"
   end
