@@ -18,7 +18,7 @@ class SongsController<ApplicationController
     user_id: params[:song][:user_id]
     )
     redirect_to :back, notice: "Song loaded"
-    MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/uploads/song/songfile/#{Song.last.id}/#{Song.last.songfile.tr(" ", "_")}", Song.last.songfile.tr(" ", "_"))
+    MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/uploads/song/songfile/#{Song.last.id}/#{Song.last.songfile.join('_')}", Song.last.songfile.join('_'))
 
   else
     redirect_to new_user_session_path notice: "Please login"
