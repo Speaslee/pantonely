@@ -20,6 +20,7 @@ gem 'gemoji-parser'
 gem 'figaro'
 gem "sidekiq"
 gem "sinatra"
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development do
   gem 'pry-rails'

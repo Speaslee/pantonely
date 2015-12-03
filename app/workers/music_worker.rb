@@ -1,6 +1,6 @@
 class MusicWorker
   include Sidekiq::Worker
-  def perform(name)
+  def perform(path, name)
     fail
   end
 
