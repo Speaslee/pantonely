@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => "/sidekiq"
   get "/songs/show" => 'songs#show'
   patch "/songs/show" => 'songs#load'
+  resources :tags, only:[:index, :show]
+  get "/users/profile/:id" => 'users#profile'
+get "/users/show" => 'users#show'
 root "songs#index"
 end
