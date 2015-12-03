@@ -20,3 +20,6 @@
      cursor:pointer;
      padding:8px;
  }
+ #playlist li:hover{
+    color:blue;
+}

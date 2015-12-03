@@ -28,3 +28,21 @@ $(function() {
         "poster": $("#playlist li").eq(0).attr("moviesposter")
     })
 })
+
+video.addEventListener('ended', function () {
+	allLnks[currentVid].classList.remove("currentvid");
+	if ((currentVid + 1) >= lnkNum) {
+		nextVid = 0;
+	} else {
+		nextVid = currentVid+1;
+	}
+	playVid(nextVid);
+})
+
+video.addEventListener('mouseenter',
+	function() {
+		video.setAttribute("controls","true");
+	})
+	video.addEventListener('mouseleave', function() {
+		video.removeAttribute("controls");
+	})
