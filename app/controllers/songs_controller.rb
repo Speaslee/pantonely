@@ -24,14 +24,14 @@ class SongsController<ApplicationController
   else
     redirect_to new_user_session_path notice: "Please login"
   end
-
+end
   def tagged
     if params[:tag].present?
-   @songs = Song.tagged_with(params[:tag])
- else
-   @songs = Song.postall
- end
-end
+      @songs = Song.tagged_with(params[:tag])
+    else
+      @songs = Song.postall
+    end
+  end
 
   # def updated
   #   Song.where(songfile: params[:song][:songfile]).update(
