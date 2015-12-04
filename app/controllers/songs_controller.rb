@@ -17,6 +17,7 @@ class SongsController<ApplicationController
     user_id: params[:song][:user_id]
     )
     c = params[:song][:songfile].original_filename
+    binding.pry
     MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/uploads/song/songfile/#{Song.last.id}/#{c}","#{c}")
     redirect_to :back, notice: "Song loaded"
 
