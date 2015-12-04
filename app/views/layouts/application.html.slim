@@ -30,9 +30,15 @@ html lang="en"
           a.navbar-brand href="#"Pantonely
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "Sign in", new_user_session_path
-              li= link_to "Sign up", "/users/sign_up"
-              li= link_to "Sign out", destroy_user_session_path, method: :delete
+              -if current_user
+                li= link_to "Tags", tags_path
+            ul.nav.navbar-nav.pull-right
+              -if current_user
+                li= link_to current_user.username, "/users/profile/#{current_user.id}"
+                li= link_to "Sign out", destroy_user_session_path, method: :delete
+              -else
+                li= link_to "Sign in", new_user_session_path
+                li= link_to "Sign up", "/users/sign_up"
 
     .container
       .row
