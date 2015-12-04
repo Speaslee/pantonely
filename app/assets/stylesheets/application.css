@@ -12,9 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require ./application.css.scss
  */
 
- @font-face {
+ /*@font-face {
         font-family: "Streetwear";
         src: font-url(/assets/streetwear-webfont.ttf)format('truetype');
         src: font-url(/assets/Streetwear.otf) format('opentype'),
@@ -22,7 +23,7 @@
              font-url(/assets/streetwear-webfont.woff2)format('woff2'),
              font-url(/assets/streetwear-webfont.woff)format('woff'),
              font-url(/assets/streetwear-webfont.svg)format('svg');
-    }
+    }*/
 
  #playlist {
      display:table;
