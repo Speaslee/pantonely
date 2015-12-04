@@ -16,12 +16,12 @@
 
  @font-face {
         font-family: "Streetwear";
-        src: url(/assets/streetwear-webfont.ttf)format('truetype');s
-        src: url(/assets/Streetwear.otf) format('opentype'),
-             url(/assets/streetwear-webfont.eot),
-             url(/assets/streetwear-webfont.woff2)format('woff2'),
-             url(/assets/streetwear-webfont.woff)format('woff'),
-             url(/assets/streetwear-webfont.svg)format('svg');
+        src: font-url(/assets/streetwear-webfont.ttf)format('truetype');
+        src: font-url(/assets/Streetwear.otf) format('opentype'),
+             font-url(/assets/streetwear-webfont.eot),
+             font-url(/assets/streetwear-webfont.woff2)format('woff2'),
+             font-url(/assets/streetwear-webfont.woff)format('woff'),
+             font-url(/assets/streetwear-webfont.svg)format('svg');
     }
 
  #playlist {
@@ -36,7 +36,7 @@
 }
 
 .navbar-brand {
-  background:url('/assets/rainbow2.gif'), url('assets/rainbow.jpg');
+  background:image-url('/assets/rainbow2.gif'), image-url('assets/rainbow.jpg');
   font-size: x-large !important;
   font-family:"Streetwear", cursive;
   color: transparent;
