@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+        font-family: "Streetwear";
+        src: url(/assets/streetwear-webfont.ttf)format('truetype');s
+        src: url(/assets/Streetwear.otf) format('opentype'),
+             url(/assets/streetwear-webfont.eot),
+             url(/assets/streetwear-webfont.woff2)format('woff2'),
+             url(/assets/streetwear-webfont.woff)format('woff'),
+             url(/assets/streetwear-webfont.svg)format('svg');
+    }
+
  #playlist {
      display:table;
  }
@@ -23,3 +34,16 @@
  #playlist li:hover{
     color:blue;
 }
+
+.navbar-brand {
+  background:url('/assets/rainbow2.gif');
+  font-size: x-large !important;
+  font-family:"Streetwear";
+  color: transparent;
+   -webkit-font-smoothing:antialiased;
+   -webkit-background-clip:text;
+   -moz-background-clip:text;
+   background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin:0;*/
+  }
