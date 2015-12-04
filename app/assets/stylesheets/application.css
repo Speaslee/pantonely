@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import 'Streetwear';
 
  @font-face {
         font-family: "Streetwear";
@@ -37,9 +36,9 @@
 }
 
 .navbar-brand {
-  background:url('/assets/rainbow2.gif');
+  background:url('/assets/rainbow2.gif'), url('assets/rainbow.jpg');
   font-size: x-large !important;
-  font-family:"Streetwear";
+  font-family:"Streetwear", cursive;
   color: transparent;
    -webkit-font-smoothing:antialiased;
    -webkit-background-clip:text;
