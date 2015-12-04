@@ -1,10 +1,10 @@
-h1 songs
+h1 Songs
 
 ul
   -if @songs
 
     -@songs.each do |a|
-      li #{a.name} by #{a.artist} on #{a.album}
+      li '#{a.name}' by #{a.artist}, on #{a.album}
   -else
     p No songs loaded yet!
 p
