@@ -5,7 +5,7 @@ class SongsController<ApplicationController
 
   def show
 
-    @songs = Song.all
+    @songs = Song.where(:user_id==current_user.id)
   end
 
   def load
