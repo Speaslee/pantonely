@@ -1,10 +1,13 @@
 h1 Songs
 
+
+h2 Songs You've Uploaded
 ul
   -if @songs
 
     -@songs.each do |a|
       li '#{a.name}'by #{a.artist}, on #{a.album}
+      audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
   -else
     p No songs loaded yet!
 p
@@ -14,7 +17,8 @@ video id="videoarea" controls="controls" poster="" src=""
 
 ul id="playlist"
   -@songs.each do |a|
-    li movieurl= a.movie #{a.name}
+    -unless a.movie ==nil
+      li movieurl= a.movie #{a.name}
 
 br
 p
