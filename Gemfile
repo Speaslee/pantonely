@@ -17,7 +17,7 @@ gem 'twitter-bootstrap-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
-gem "sidekiq"
+gem "sidekiq",'3.5.3'
 gem "sinatra"
 gem 'acts-as-taggable-on', '~> 3.4'
 
