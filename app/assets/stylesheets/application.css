@@ -52,7 +52,7 @@
    margin:0;
 }
 .navbar-default .navbar-nav>li>a{
-  color: #E80C7F;
+  color: #E80C7F!important;;
   font-family: "Metropolis 1920" !important;
 }
 .navbar-default{
