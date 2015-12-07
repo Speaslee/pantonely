@@ -5,6 +5,6 @@ class MusicWorker
   end
 
   def on_complete
-
+    
   end
 end
