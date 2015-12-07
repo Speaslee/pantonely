@@ -16,7 +16,6 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'gemoji-parser'
 gem 'figaro'
 gem "sidekiq"
 gem "sinatra"
