@@ -17,8 +17,7 @@ class SongsController<ApplicationController
     user_id: params[:song][:user_id]
     )
     c = Song.last.songfile.path
-    s = paramsparams[:song][:songfile].original_filename
-
+    s = params[:song][:songfile].original_filename
     MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/#{c}", "#{s}")
     redirect_to :back, notice: "Song loaded"
 
@@ -31,6 +30,7 @@ class SongsController<ApplicationController
       @songs = Song.postall
     end
   end
+
 
   # def updated
   #   Song.where(songfile: params[:song][:songfile]).update(
