@@ -51,3 +51,10 @@
    -webkit-text-fill-color:transparent;
    margin:0;
 }
+.navbar-default .navbar-nav>li>a{
+  color: #E80C7F;
+  font-family: "Metropolis 1920" !important;
+}
+.navbar-default{
+  background-color: #282828
+}

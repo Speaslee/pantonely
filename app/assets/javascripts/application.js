@@ -15,6 +15,9 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$('ul.menu li:first-child').addClass('currentvid');
+
 $(function() {
     $("#playlist li").on("click", function() {
         $("#videoarea").attr({
@@ -27,4 +30,17 @@ $(function() {
         "src": $("#playlist li").eq(0).attr("movieurl"),
         "poster": $("#playlist li").eq(0).attr("moviesposter")
     })
+})
+videoarea.addEventListener('ended', function () {
+    allLnks[currentVid].classList.remove("currentvid");
+    if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
+    playVid(nextVid);
+})
+
+videoarea.addEventListener('mouseenter', function() {
+    video.setAttribute("controls","true");
+})
+
+videoarea.addEventListener('mouseleave', function() {
+    video.removeAttribute("controls");
 })

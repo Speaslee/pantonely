@@ -4,4 +4,7 @@ class MusicWorker
     fail
   end
 
+  def on_complete
+
+  end
 end
