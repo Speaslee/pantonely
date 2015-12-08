@@ -12,6 +12,7 @@ class SongsController<ApplicationController
     movie: params[:movie],
     tag_list: params[:tag_list]
     )
+    redirect_to :back, notice: "Movie Loaded"
   end
 
   def load
