@@ -7,7 +7,7 @@ class SongsController<ApplicationController
     @songs = Song.where(:user_id==current_user.id)
   end
 
-  def update
+  def movie_update
     Song.last.update(
     movie: params[:movie],
     tag_list: params[:tag_list]
