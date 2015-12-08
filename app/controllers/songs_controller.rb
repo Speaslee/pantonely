@@ -4,8 +4,14 @@ class SongsController<ApplicationController
   end
 
   def show
-
     @songs = Song.where(:user_id==current_user.id)
+  end
+
+  def update
+    Song.last.update(
+    movie: params[:movie],
+    tag_list: params[:tag_list]
+    )
   end
 
   def load
@@ -17,7 +23,7 @@ class SongsController<ApplicationController
     user_id: params[:song][:user_id]
     )
     c = Song.last.songfile.path
-    s = params[:song][:songfile].original_filename.gsub(" ","_")
+    s = params[:song][:songfile].original_filename.gsub(" ","_").gsub("'","_")
     MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/#{c}", "#{s}")
     redirect_to :back, notice: "Song loaded"
 
@@ -31,10 +37,4 @@ class SongsController<ApplicationController
     end
   end
 
-
-  # def updated
-  #   Song.where(songfile: params[:song][:songfile]).update(
-  #   movie: movie_path,
-  #   taglist: key.split(_)
-  #   )
 end
