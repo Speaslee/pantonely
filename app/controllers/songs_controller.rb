@@ -1,4 +1,5 @@
 class SongsController<ApplicationController
+skip_before_filter :verify_authenticity_token, only:[:movie_update]
 
   def index
   end
