@@ -2,23 +2,26 @@ h1 Songs
 
 
 h2 Songs You've Uploaded:
-ul
-  -if @songs
+.well
+  ul
+    -if @songs
 
-    -@songs.each do |a|
-      li '#{a.name}'by #{a.artist}, on #{a.album}
-      - if a.tags.any?
-        - a.tags.each do |tag|
-          = link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-success tag'
-      audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
+      -@songs.each do |a|
+        li '#{a.name}'by #{a.artist}, on #{a.album}
+        - if a.tags.any?
+          - a.tags.each do |tag|
+            = link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-success tag'
+            br
+        audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
 
-  -else
-    p No songs loaded yet!
+    -else
+      p No songs loaded yet!
 p
 -if @songs
   h2 Visualized Songs:
   video id="videoarea" controls="controls" poster="" src=""
 
+.well
   ul id="playlist"
     -@songs.each do |a|
       -unless a.movie ==nil
