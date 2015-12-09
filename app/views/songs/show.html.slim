@@ -7,6 +7,9 @@ ul
 
     -@songs.each do |a|
       li '#{a.name}'by #{a.artist}, on #{a.album}
+      - if a.tags.any?
+        - a.tags.each do |tag|
+          style="color:#{@tag.name}" link_to tag.name, tag_path(tag), class: 'btn btn-xs tag'
       audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
 
   -else

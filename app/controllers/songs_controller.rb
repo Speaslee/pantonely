@@ -14,7 +14,7 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
     movie: params[:song][:movie],
     tag_list: params[:song][:tag_list]
     )
-    redirect_to :back, notice: "Movie Loaded"
+    redirect_to "/songs/show", notice: "Movie loaded"
   end
 
   def load
