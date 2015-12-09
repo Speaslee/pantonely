@@ -8,9 +8,10 @@ class SongsController<ApplicationController
   end
 
   def movie_update
-    Song.last.update(
-    movie: params[:movie],
-    tag_list: params[:tag_list]
+
+    Song.find(params[:song][:id]).update(
+    movie: params[:song][:movie],
+    tag_list: params[:song][:tag_list]
     )
     redirect_to :back, notice: "Movie Loaded"
   end
@@ -24,8 +25,9 @@ class SongsController<ApplicationController
     user_id: params[:song][:user_id]
     )
     c = Song.last.songfile.path
+    ident = Song.last.id
     s = params[:song][:songfile].original_filename.gsub(" ","_").gsub("'","_")
-    MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/#{c}", "#{s}")
+    MusicWorker.perform_async("https://s3.amazonaws.com/pantonely/#{c}", "#{s}","#{ident}" )
     redirect_to :back, notice: "Song loaded"
 
   end
