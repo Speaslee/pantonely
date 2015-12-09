@@ -36,7 +36,7 @@
 }
 .navbar-brand {
   font-family: "Metropolis 1920";
-  font-size: x-large !important;
+  font-size: 35px !important;
   background:url('/images/rainbow2.gif');
    background-repeat:repeat-x;
    background-position:0 0;
@@ -57,9 +57,14 @@
 }
 body {
   color: #E80C7F !important;
+  font-family: "Metropolis 1920" !important;
 }
 
 .well{
   background: #202020;
+  font-family:sans-serif;
+}
 
+.btn-default{
+  color: #D8D8D8 ;
 }

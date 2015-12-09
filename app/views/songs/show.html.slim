@@ -10,7 +10,7 @@ h2 Songs You've Uploaded:
         li '#{a.name}'by #{a.artist}, on #{a.album}
         - if a.tags.any?
           - a.tags.each do |tag|
-            = link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-success tag'
+            =link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-default', style: "background-color:#{tag.name}"
             br
         audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
 
