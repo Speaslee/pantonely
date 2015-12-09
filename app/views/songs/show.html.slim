@@ -11,7 +11,6 @@ h2 Songs You've Uploaded:
         - if a.tags.any?
           - a.tags.each do |tag|
             = link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-success tag'
-            = render "form2"
             br
         audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
 
