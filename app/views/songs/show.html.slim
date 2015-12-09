@@ -12,14 +12,14 @@ ul
   -else
     p No songs loaded yet!
 p
+-if @songs
+  h2 Visualized Songs:
+  video id="videoarea" controls="controls" poster="" src=""
 
-h2 Visualized Songs:
-video id="videoarea" controls="controls" poster="" src=""
-
-ul id="playlist"
-  -@songs.each do |a|
-    -unless a.movie ==nil
-      li movieurl= a.movie #{a.name}
+  ul id="playlist"
+    -@songs.each do |a|
+      -unless a.movie ==nil
+        li movieurl= a.movie #{a.name}
 
 br
 p

@@ -5,6 +5,6 @@ class TagsController < ApplicationController
 
   def show
     @tag =  ActsAsTaggableOn::Tag.find(params[:id])
-    @songs = Song.tagged_with(@tag.name)
+    @songs = Song.where(user_id:current_user.id).tagged_with(@tag.name)
   end
 end
