@@ -3,16 +3,14 @@ h1 style="color:#{@tag.name}" = @tag.name
 
 video id="videoarea" controls="controls" poster="" src=""
 .well
-  table
-    thead
-      tr
-        th.sortable "Name"
-        th.sortable "Artist"
-        th.sortable "Album"
-    tbody
-      -@tabled_songs.each do |a|
-        -unless a.movie ==nil
-          tr id="playlist"
-            td movieurl= a.movie #{a.name}
-            td= a.artist
-            td= a.album
+  table class="pretty"
+    tr
+      th= sortable "name"
+      th= sortable "artist"
+      th= sortable "album"
+    -@tabled_songs.each do |a|
+      -unless a.movie ==nil
+        tr id="playlist"
+          td movieurl= a.movie #{a.name}
+          td= a.artist
+          td= a.album
