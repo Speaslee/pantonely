@@ -39,7 +39,7 @@ p
     tbody
       -@tabled_songs.each do |a|
         -unless a.movie ==nil
-          tr class="playlist"
+          tr id="playlist"
             td movieurl= a.movie #{a.name}
             td= a.artist
             td= a.album
