@@ -16,6 +16,14 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).on("ready", function() {
+  $(".btn-editing").on("click", function() {
+    console.log(this);
+    $(this).siblings(".edit_comment").toggle('show');
+  })
+})
+
+
 $('ul.menu li:first-child').addClass('currentvid');
 
 $(function() {

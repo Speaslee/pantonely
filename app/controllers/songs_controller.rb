@@ -8,6 +8,15 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
     @songs = Song.where(:user_id==current_user.id)
   end
 
+  def edit
+    Song.find(params[:id]).update(
+    name: params[:name],
+    artist: params[:artist],
+    album: params[:album]
+  )
+   redirect_to "/songs/show", notice: "Song edited"
+  end
+
   def movie_update
 
     Song.find(params[:song][:id]).update(
