@@ -37,6 +37,7 @@
 
 body{
   background: url("background.jpg");
+  background-repeat: no-repeat;
 }
 
 .navbar-brand {
