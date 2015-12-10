@@ -9,11 +9,11 @@
   background-color: transparent;
   border-bottom: none;
 }
-body {
-  background: #bfbfbf; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#202020 , #707070, #202020); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#202020 , #707070, #202020); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#202020 , #707070, #202020); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#202020 , #707070, #202020); /* Standard syntax */
+/*body {
+  /*background: #bfbfbf; /* For browsers that do not support gradients */
+  /*background: -webkit-linear-gradient(#202020 , #707070, #202020); /* For Safari 5.1 to 6.0 */*/
+  /*background: -o-linear-gradient(#202020 , #707070, #202020); /* For Opera 11.1 to 12.0 */*/
+  /*background: -moz-linear-gradient(#202020 , #707070, #202020); /* For Firefox 3.6 to 15 */*/
+  /*background: linear-gradient(#202020 , #707070, #202020); /* Standard syntax */*/*/
 
 }

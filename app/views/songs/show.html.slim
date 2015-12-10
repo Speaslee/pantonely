@@ -8,8 +8,8 @@ h2 Songs You've Uploaded:
 
       -@songs.each do |a|
         li '#{a.name}'by #{a.artist}, on #{a.album}
-        button.btn.btn-editing Edit
-        =render "form2", :a=> a
+        /button.btn.btn-editing Edit
+        /=render "form2", :a=> a
         - if a.tags.any?
           - a.tags.each do |tag|
             =link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-default', style: "background-color:#{tag.name}"
@@ -24,10 +24,15 @@ p
   video id="videoarea" controls="controls" poster="" src=""
 
 .well
-  ul id="playlist"
+  tr id="playlist"
+    th sortable="Name"
+    th sortable="Artist"
+    th sortable="Album"
     -@songs.each do |a|
       -unless a.movie ==nil
-        li movieurl= a.movie #{a.name}
+        td movieurl= a.movie #{a.name}
+        td= a.artist
+        td= a.album
 
 br
 p

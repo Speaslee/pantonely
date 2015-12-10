@@ -1,4 +1,5 @@
 class SongsController<ApplicationController
+  helper_method :sort_coloumn, :sort_direction
 skip_before_filter :verify_authenticity_token, only:[:movie_update]
 
   def index
@@ -48,6 +49,14 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
     else
       @songs = Song.postall
     end
+  end
+
+  def sort_coloumn
+    Song.column_names.include?(params[:sort])? params[:sort]: "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? paramss[:direction] : "asc"
   end
 
 end
