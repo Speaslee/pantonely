@@ -1,5 +1,8 @@
-=form_for Song.find(a.id), method: :patch do |f|
-  = f.text_area :name, class: "form-control"
-  = f.text_area :artist, class: "form-control"
-  = f.text_area :album, class: "form_control"
+=form_for Song.find(a.id), method: :put do |f|
+  = f.text_area :name, class: "form-control", rows: 1
+  = f.text_area :artist, class: "form-control", rows: 1
+  = f.text_area :album, class: "form_control", rows: 1
+  = f.hidden_field :id, class:"form_control"
+  br
   button.btn.btn-primary Save Edits
+  =render "form3", :a=>a

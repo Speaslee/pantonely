@@ -19,6 +19,11 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
    redirect_to "/songs/show", notice: "Song edited"
   end
 
+  def delete
+    Song.find(params[:song][:id].to_i).destroy
+    redirect_to "/songs/show", notice: "Song Deleted"
+  end
+
   def movie_update
 
     Song.find(params[:song][:id]).update(

@@ -8,13 +8,15 @@ h2 Songs You've Uploaded:
 
       -@songs.each do |a|
         li '#{a.name}'by #{a.artist}, on #{a.album}
-        /button.btn.btn-editing Edit
-        /=render "form2", :a=> a
         - if a.tags.any?
           - a.tags.each do |tag|
             =link_to tag.name, tag_path(tag), class: 'btn btn-xs btn-default', style: "background-color:#{tag.name}"
             br
         audio controls="controls" src= "https://s3.amazonaws.com/pantonely/#{a.songfile.path}"
+        br
+        button.btn.btn-editing Edit
+        =render "form2", :a=> a
+        br
 
     -else
       p No songs loaded yet!

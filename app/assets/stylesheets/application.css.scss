@@ -85,7 +85,7 @@ table{
   color: #D8D8D8 ;
 }
 
-.edit_comment {
+.edit_song {
   display: none;
 }
 
@@ -101,4 +101,9 @@ table{
 
 .pretty th .desc {
   background-image: url(/images/down_arrow.gif);
+}
+
+ul li {
+display: block;
+list-style: none;
 }

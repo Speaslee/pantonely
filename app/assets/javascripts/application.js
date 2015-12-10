@@ -19,7 +19,7 @@
 $(document).on("ready", function() {
   $(".btn-editing").on("click", function() {
     console.log(this);
-    $(this).siblings(".edit_comment").toggle('show');
+    $(this).siblings(".edit_song").toggle('show');
   })
 })
 

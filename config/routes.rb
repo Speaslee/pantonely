@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get "/songs/show" => 'songs#show'
   post "/songs/show" => 'songs#load'
   patch "/songs/show"=> 'songs#movie_update'
-  patch "/songs/show/:id"=> 'songs#edit'
+  put "/songs/show"=> 'songs#edit', as: "song"
+  delete "/songs/show"=> 'songs#delete'
   resources :tags, only:[:index, :show]
   get "/users/profile/:id" => 'users#profile'
 get "/users/show" => 'users#show'
