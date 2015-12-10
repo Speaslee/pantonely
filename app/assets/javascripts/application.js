@@ -24,10 +24,8 @@ $(document).on("ready", function() {
 })
 
 
-$('ul.menu li:first-child').addClass('currentvid');
-
 $(function() {
-    $("#playlist li").on("click", function() {
+    $("#playlist td").on("click", function() {
         $("#videoarea").attr({
             "src": $(this).attr("movieurl"),
             "poster": "",
@@ -35,8 +33,8 @@ $(function() {
         })
     })
     $("#videoarea").attr({
-        "src": $("#playlist li").eq(0).attr("movieurl"),
-        "poster": $("#playlist li").eq(0).attr("moviesposter")
+        "src": $("#playlist td").eq(0).attr("movieurl"),
+        "poster": $("#playlist td").eq(0).attr("moviesposter")
     })
 })
 videoarea.addEventListener('ended', function () {

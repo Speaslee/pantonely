@@ -56,7 +56,7 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ? paramss[:direction] : "asc"
+    %w[asc desc].include?(params[:direction]) ? params[:direction]: "asc"
   end
 
 end

@@ -24,16 +24,21 @@ p
   video id="videoarea" controls="controls" poster="" src=""
 
 .well
+  ul id="playlist"
+    -@songs.each do |a|
+      -unless a.movie ==nil
+        li movieurl= a.movie #{a.name}
+
+.well
   tr id="playlist"
-    th sortable="Name"
-    th sortable="Artist"
-    th sortable="Album"
+    th.sortable "Name"
+    th.sortable "Artist"
+    th.sortable "Album"
     -@songs.each do |a|
       -unless a.movie ==nil
         td movieurl= a.movie #{a.name}
         td= a.artist
         td= a.album
-
 br
 p
 .well
