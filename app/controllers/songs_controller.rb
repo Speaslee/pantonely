@@ -1,5 +1,5 @@
 class SongsController<ApplicationController
-  helper_method :sort_coloumn, :sort_direction
+helper_method :sort_column, :sort_direction
 skip_before_filter :verify_authenticity_token, only:[:movie_update]
 
   def index
@@ -7,6 +7,7 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
 
   def show
     @songs = Song.where(:user_id==current_user.id)
+    @tabled_songs = Song.order(sort_column + " " + sort_direction)
   end
 
   def edit
@@ -51,7 +52,7 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
     end
   end
 
-  def sort_coloumn
+  def sort_column
     Song.column_names.include?(params[:sort])? params[:sort]: "name"
   end
 

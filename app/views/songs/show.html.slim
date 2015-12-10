@@ -30,15 +30,19 @@ p
         li movieurl= a.movie #{a.name}
 
 .well
-  tr id="playlist"
-    th.sortable "Name"
-    th.sortable "Artist"
-    th.sortable "Album"
-    -@songs.each do |a|
-      -unless a.movie ==nil
-        td movieurl= a.movie #{a.name}
-        td= a.artist
-        td= a.album
+  table
+    thead
+      tr
+        th.sortable "Name"
+        th.sortable "Artist"
+        th.sortable "Album"
+    tbody
+      -@tabled_songs.each do |a|
+        -unless a.movie ==nil
+          tr class="playlist"
+            td movieurl= a.movie #{a.name}
+            td= a.artist
+            td= a.album
 br
 p
 .well
