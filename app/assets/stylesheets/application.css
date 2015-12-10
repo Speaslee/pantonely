@@ -35,6 +35,10 @@
     color:blue;
 }
 
+.label {
+  font-family: sans-serif;
+}
+
 body{
   background: url("background.jpg");
   background-repeat: no-repeat;
