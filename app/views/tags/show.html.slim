@@ -2,7 +2,17 @@ h1 style="color:#{@tag.name}" = @tag.name
 
 
 video id="videoarea" controls="controls" poster="" src=""
-
-ul id="playlist"
-  -@songs.tagged_with(@tag.name).each do |a|
-    li movieurl= a.movie #{a.name}
+.well
+  table
+    thead
+      tr
+        th.sortable "Name"
+        th.sortable "Artist"
+        th.sortable "Album"
+    tbody
+      -@tabled_songs.each do |a|
+        -unless a.movie ==nil
+          tr id="playlist"
+            td movieurl= a.movie #{a.name}
+            td= a.artist
+            td= a.album
