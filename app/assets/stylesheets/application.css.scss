@@ -24,12 +24,9 @@
              font-url(/assets/streetwear-webfont.svg)format('svg');
     }*/
 
- #playlist {
-     display:table;
- }
+
  #playlist td{
      cursor:pointer;
-     padding:8px;
  }
  #playlist td:hover{
     color:blue;
@@ -76,10 +73,6 @@ a{
   color: #9F29F5;
 }
 
-table{
-  padding-right: 8px;
-}
-
 .well{
   background: #202020;
   font-family:sans-serif;
@@ -97,14 +90,20 @@ table{
   display: none;
 }
 
-.pretty th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-
 ul li {
 display: block;
 list-style: none;
 }
+
+td {
+display: table-cell;
+vertical-align: inherit;
+text-align: inherit;
+}
+th{
+  text-align:left;
+}
+
+
+th, td { vertical-align: top;
+padding-right: 10px;}
