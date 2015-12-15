@@ -25,28 +25,22 @@ $(document).on("ready", function() {
 
 
 $(function() {
-    $("#playlist td").on("click", function() {
+    $('[data-js="playlist"]').on("click", function() {
         $("#videoarea").attr({
             "src": $(this).attr("movieurl"),
             "poster": "",
             "autoplay": "autoplay"
         })
     })
-    $("#videoarea").attr({
-        "src": $("#playlist td").eq(0).attr("movieurl"),
-        "poster": $("#playlist td").eq(0).attr("moviesposter")
-    })
-})
-videoarea.addEventListener('ended', function () {
-    allLnks[currentVid].classList.remove("currentvid");
-    if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
-    playVid(nextVid);
-})
+    $("#videoarea")
+      .attr({
+        "src": $('[data-js="playlist"]').eq(0).attr("movieurl")
 
-videoarea.addEventListener('mouseenter', function() {
-    video.setAttribute("controls","true");
-})
-
-videoarea.addEventListener('mouseleave', function() {
-    video.removeAttribute("controls");
+      })
+      .on("ended", function(){
+        console.log("hi")
+        //allLnks[currentVid].classList.remove("currentvid");
+        //if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
+        //playVid(nextVid);
+      })
 })
