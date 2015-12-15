@@ -39,7 +39,7 @@ $(function() {
 
       })
       .on("ended", function(){
-          video.src = $(this.nextSibling).attr("movieurl");
-          video.play();
+          "src "= $(this.nextSibling).attr("movieurl");
+          
       })
 })
