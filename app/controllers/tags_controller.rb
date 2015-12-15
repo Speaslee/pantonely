@@ -2,6 +2,7 @@ class TagsController < ApplicationController
 helper_method :sort_column, :sort_direction
   def index
     @tags = ActsAsTaggableOn::Tag.all
+    @songs = Song.where(user_id: current_user.id)
   end
 
   def show
