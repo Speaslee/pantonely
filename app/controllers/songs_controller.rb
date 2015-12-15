@@ -6,7 +6,7 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
   end
 
   def show
-    @songs = Song.where(:user_id==current_user.id)
+    @songs = Song.where(user_id: current_user.id)
     @tabled_songs = @songs.order(sort_column + " " + sort_direction)
   end
 
