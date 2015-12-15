@@ -26,19 +26,19 @@ p
   h2 Visualized Songs:
   video id="videoarea" controls="controls" poster="" src=""
 
-.well
 -if @songs.any?
-  table
-    tr
-      th= sortable "name"
-      th= sortable "artist"
-      th= sortable "album"
-    -@tabled_songs.each do |a|
-      -unless a.movie ==nil
-        tr
-          td data-js="playlist" movieurl= a.movie #{a.name}
-          td= a.artist
-          td= a.album
+  .well
+    table
+      tr
+        th= sortable "name"
+        th= sortable "artist"
+        th= sortable "album"
+      -@tabled_songs.each do |a|
+        -unless a.movie ==nil
+          tr
+            td data-js="playlist" movieurl= a.movie #{a.name}
+            td= a.artist
+            td= a.album
 br
 p
 .well
