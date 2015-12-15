@@ -16,7 +16,7 @@ skip_before_filter :verify_authenticity_token, only:[:movie_update]
     artist: params[:artist],
     album: params[:album]
     )
-    redirect_to :back, notice: "Song edited"
+    redirect_to "/songs/show", notice: "Song edited"
   end
 
   def delete
