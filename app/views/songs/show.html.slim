@@ -6,7 +6,7 @@ h2 Songs You've Uploaded:
   ul
     -if @songs
 
-      -@songs.each do |a|
+      -@songs.first(5) do |a|
         li '#{a.name}' by #{a.artist}, on #{a.album}
         - if a.tags.any?
           - a.tags.each do |tag|
