@@ -10,7 +10,7 @@ video id="videoarea" controls="controls" poster="" src=""
       th= sortable "album"
     -@tabled_songs.each do |a|
       -unless a.movie ==nil
-        tr id="playlist"
-          td movieurl= a.movie #{a.name}
+        tr 
+          td data-js="playlist" movieurl= a.movie #{a.name}
           td= a.artist
           td= a.album

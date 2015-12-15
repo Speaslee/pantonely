@@ -36,10 +36,11 @@ $(function() {
     $("#videoarea")
       .attr({
         "src": $('[data-js="playlist"]').eq(0).attr("movieurl")
-
       })
       .on("ended", function(){
-          "src "= $(this.nextSibling).attr("movieurl");
-          
+        $("#videoarea").attr({
+          "src": $(this.nextSibling).attr("movieurl");
+          "autoplay": "autoplay"
+        })
       })
 })
