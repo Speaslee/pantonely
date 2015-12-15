@@ -38,9 +38,8 @@ $(function() {
 
       })
       .on("ended", function(){
-        console.log("hi")
-        //allLnks[currentVid].classList.remove("currentvid");
-        //if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
-        //playVid(nextVid);
+        allLnks[currentVid].classList.remove("currentvid");
+        if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
+        playVid(nextVid);
       })
 })
