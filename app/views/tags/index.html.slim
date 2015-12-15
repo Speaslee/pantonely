@@ -1,4 +1,7 @@
 h1 Tags
-ul
-  -@tags.each do |tag|
-    li #{link_to tag.name, tag_path(tag)} ... #{Song.tagged_with(tag.name).count} Songs of this color
+-if @songs.any?
+  ul
+    -@tags.each do |tag|
+      li #{link_to tag.name, tag_path(tag)} ... #{Song.tagged_with(tag.name).count} Songs of this color
+-else
+  h2 You haven't uploaded any songs yet! Upload a song and find out what color it is!
