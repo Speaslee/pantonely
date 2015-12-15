@@ -32,14 +32,14 @@ $(function() {
             "autoplay": "autoplay"
         })
     })
+
     $("#videoarea")
       .attr({
         "src": $('[data-js="playlist"]').eq(0).attr("movieurl")
 
       })
       .on("ended", function(){
-        allLnks[currentVid].classList.remove("currentvid");
-        if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
-        playVid(nextVid);
+          video.src = $(this.nextSibling).attr("movieurl");
+          video.play();
       })
 })
