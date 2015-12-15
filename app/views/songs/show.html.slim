@@ -4,7 +4,7 @@ h1 Songs
 h2 Songs You've Uploaded:
 .well
   ul
-    -if @songs
+    -if @songs.any?
 
       -@songs.each do |a|
         li '#{a.name}' by #{a.artist}, on #{a.album}
@@ -21,7 +21,7 @@ h2 Songs You've Uploaded:
     -else
       p No songs loaded yet!
 p
--if @songs
+-if @songs.any?
   h2 Visualized Songs:
   video id="videoarea" controls="controls" poster="" src=""
 
