@@ -33,14 +33,14 @@ $(function() {
         })
     })
 
-    $("#videoarea")
-      .attr({
-        "src": $('[data-js="playlist"]').eq(0).attr("movieurl")
-      })
-      .on("ended", function(){
-        $("#videoarea").attr({
-          "src": $(this.nextSibling).attr("movieurl");
-          "autoplay": "autoplay"
-        })
-      })
+    // $("#videoarea")
+    //   .attr({
+    //     "src": $('[data-js="playlist"]').eq(0).attr("movieurl")
+    //   })
+    //   .on("ended", function(){
+    //     $("#videoarea").attr({
+    //       "src": $(this.nextSibling).attr("movieurl");
+    //       "autoplay": "autoplay"
+    //     })
+    //   })
 })
